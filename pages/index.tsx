@@ -1,7 +1,18 @@
-import styles from "../styles/Home.module.css"
+import GradientLayout from "@/components/gradientLayout"
 
 const Home = () => {
-  return <div className={styles.container}>home</div>
+  return (
+    <GradientLayout
+      title="patryk kurzeja"
+      subtitle="super subtitle"
+      roundImage
+      color="red"
+      description="15 public playlists"
+      image="https://bit.ly/dan-abramov"
+    >
+      home
+    </GradientLayout>
+  )
 }
 
 export default Home

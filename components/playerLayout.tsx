@@ -2,21 +2,23 @@ import { Box } from "@chakra-ui/layout"
 import Sidebar from "./sidebar"
 
 const PlayerLayout = ({ children }) => {
+  const playerHeight = "100px"
+  const sidebarWidth = "250px"
   return (
-    <Box as="main" w="100vw" h="100vh" bg="gray.200">
+    <Box w="100vw" h="100vh" bg="gray.200">
       <Box
         as="aside"
         position="absolute"
         top="0"
         bottom="0"
         left="0"
-        width="250px"
+        width={sidebarWidth}
         zIndex="1"
       >
         <Sidebar />
       </Box>
-      <Box marginLeft="250px" marginBottom="100px">
-        {children}
+      <Box marginLeft={sidebarWidth} marginBottom={playerHeight}>
+        <Box h={`calc(100vh - ${playerHeight})`}>{children}</Box>
       </Box>
       <Box
         position="absolute"
@@ -25,7 +27,7 @@ const PlayerLayout = ({ children }) => {
         zIndex="2"
         bottom="0"
         w="100vw"
-        h="100px"
+        h={playerHeight}
         bg="gray.500"
       >
         bottom

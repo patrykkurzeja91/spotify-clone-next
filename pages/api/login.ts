@@ -5,8 +5,6 @@ import prisma from "@/lib/prisma"
 import { NextApiRequest, NextApiResponse } from "next"
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // create login
-  const salt = bcrypt.genSaltSync(10)
   const { email, password } = req.body
 
   const user = await prisma.user.findUnique({
